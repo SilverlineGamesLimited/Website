@@ -1,0 +1,9 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "silverline-games",
+  "compatibility_date": "2026-06-23",
+  "assets": {
+    "directory": "artifacts/silverline-games/dist/public",
+    "not_found_handling": "single-page-application"
+  }
+}
