@@ -73,6 +73,15 @@ export function Navbar() {
           >
             Contact
           </button>
+          <a
+            href="https://www.instagram.com/silverlinegameslimited/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm font-medium text-white/70 hover:text-white transition-colors"
+            data-testid="link-instagram-nav"
+          >
+            Instagram
+          </a>
           <Link
             href="/privacy-policy"
             className="text-sm font-medium text-white/70 hover:text-white transition-colors"

@@ -83,6 +83,17 @@ export function Footer() {
               </li>
               <li>
                 <a
+                  href="https://www.instagram.com/silverlinegameslimited/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white/60 text-sm hover:text-white transition-colors"
+                  data-testid="link-footer-instagram"
+                >
+                  Instagram
+                </a>
+              </li>
+              <li>
+                <a
                   href="mailto:support@silverlinegames.co.uk?subject=General%20Enquiry"
                   className="text-white/60 text-sm hover:text-white transition-colors"
                   data-testid="link-footer-general"
