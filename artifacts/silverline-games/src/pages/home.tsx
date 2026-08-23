@@ -206,7 +206,7 @@ function PhoneMockup({ game, className = "" }: { game: Game; className?: string 
 const featuredGame = games[0];
 
 const heroStats = [
-  { label: "4", detail: "Games in progress" },
+  { label: "4", detail: "Games in our lineup" },
   { label: "iPhone", detail: "Built for phone play" },
   { label: "UK", detail: "Registered publisher" },
 ];
@@ -249,7 +249,7 @@ const faqs = [
   {
     question: "Where can I find the games?",
     answer:
-      "Our first iPhone games are preparing for release. App Store links will be added as soon as the public listings are ready.",
+      "Gem Kingdom is available now — download it from the App Store. Our other games are still in development, with App Store links added as soon as they're ready.",
   },
   {
     question: "Who handles purchases and refunds?",
@@ -425,8 +425,8 @@ export default function Home() {
                 Building bright, friendly iPhone games for players everywhere.
               </h1>
               <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/72 md:text-xl">
-                Silverline Games is preparing its first mobile titles for release:
-                quick-play games with clear support, cheerful design, and honest updates.
+                Gem Kingdom is out now on the App Store, with more quick-play games
+                on the way — clear support, cheerful design, and honest updates.
               </p>
             </motion.div>
 
@@ -444,7 +444,7 @@ export default function Home() {
                 className="w-full bg-white text-[hsl(228,45%,12%)] font-semibold px-7 py-2.5 rounded-full hover:bg-white/90 transition-all duration-200 shadow-lg shadow-black/30 text-sm sm:w-auto"
                 data-testid="button-developer-services"
               >
-                See What We’re Building
+                See Our Games
               </button>
               <a
                 href="mailto:support@silverlinegames.co.uk?subject=Support%20Enquiry"
@@ -825,10 +825,10 @@ export default function Home() {
             className="text-center mb-14"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Games We’re Building
+              Our Games
             </h2>
             <p className="text-gray-500 text-lg leading-relaxed max-w-2xl mx-auto">
-              A first look at the iPhone games currently being prepared by Silverline Games Limited.
+              Gem Kingdom is available now, with more iPhone games in development at Silverline Games Limited.
             </p>
           </motion.div>
 
