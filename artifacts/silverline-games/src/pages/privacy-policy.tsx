@@ -5,7 +5,7 @@ import { Link } from "wouter";
 import { ChevronLeft } from "lucide-react";
 
 const appNames = [
-  "Casual Puzzle Game",
+  "Gem Kingdom",
   "Arcade Tap Game",
   "Seasonal Catch Game",
   "Garden Strategy Game",

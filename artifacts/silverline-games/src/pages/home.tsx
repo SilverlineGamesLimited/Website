@@ -112,15 +112,22 @@ const serviceHighlights = [
 
 const games = [
   {
-    title: "Casual Puzzle Game",
-    label: "Project One",
-    tag: "Collect and progress",
+    title: "Gem Kingdom",
+    label: "Gem Kingdom",
+    tag: "Match Gems, Explore Worlds",
     accent: "from-emerald-400 via-cyan-300 to-blue-500",
     surface: "from-emerald-50 via-cyan-50 to-blue-50",
     highlight: "text-emerald-700",
-    desc: "A colourful casual game built around collecting, progression, and satisfying short sessions.",
-    spotlight: "A friendly collecting game being prepared for quick iPhone sessions and steady progression.",
-    details: ["Collection-focused play", "Bright reward moments", "Short sessions with replayable goals"],
+    desc: "A match-3 puzzle adventure — match gems, unlock treasure chests, and journey across a magical world map.",
+    spotlight: "Match gems, unlock treasure chests, and explore a magical world map with daily challenges, leaderboards, and power-ups.",
+    details: [
+      "Match-3 gem puzzles across illustrated worlds",
+      "Daily challenges and leaderboard competition",
+      "Bomb, Lightning, Rainbow, Undo, and Hint power-ups",
+    ],
+    icon: "/gem-kingdom-icon.png",
+    appStoreUrl: "https://apps.apple.com/gb/app/gem-kingdom/id6794047234",
+    live: true,
   },
   {
     title: "Arcade Tap Game",
@@ -168,9 +175,17 @@ function PhoneMockup({ game, className = "" }: { game: Game; className?: string 
         <div className={`absolute -bottom-12 -left-12 h-36 w-36 rounded-full bg-gradient-to-br ${game.accent} opacity-25 blur-2xl`} />
         <div className="relative flex min-h-[310px] flex-col justify-between">
           <div>
-            <div className={`flex h-24 w-24 items-center justify-center rounded-[1.55rem] bg-gradient-to-br ${game.accent} text-2xl font-black text-white shadow-xl shadow-black/20`}>
-              {game.label.replace("Project ", "")}
-            </div>
+            {game.icon ? (
+              <img
+                src={game.icon}
+                alt={`${game.title} app icon`}
+                className="h-24 w-24 rounded-[1.55rem] object-cover shadow-xl shadow-black/20"
+              />
+            ) : (
+              <div className={`flex h-24 w-24 items-center justify-center rounded-[1.55rem] bg-gradient-to-br ${game.accent} text-2xl font-black text-white shadow-xl shadow-black/20`}>
+                {game.label.replace("Project ", "")}
+              </div>
+            )}
             <p className={`mt-6 text-xs font-bold uppercase tracking-[0.16em] ${game.highlight}`}>
               {game.tag}
             </p>
@@ -486,15 +501,24 @@ export default function Home() {
               className="absolute bottom-3 right-1/2 translate-x-1/2 rounded-3xl border border-white/10 bg-white/[0.07] p-3 shadow-xl shadow-black/25 backdrop-blur-md sm:right-8 sm:top-2 sm:bottom-auto sm:translate-x-0"
             >
               <div className="grid grid-cols-2 gap-2">
-                {games.map((game) => (
-                  <div
-                    key={game.title}
-                    className={`flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br ${game.accent} text-sm font-black text-white shadow-md shadow-black/20`}
-                    aria-label={game.label}
-                  >
-                    {game.label.replace("Project ", "")}
-                  </div>
-                ))}
+                {games.map((game) =>
+                  game.icon ? (
+                    <img
+                      key={game.title}
+                      src={game.icon}
+                      alt={game.title}
+                      className="h-12 w-12 rounded-2xl object-cover shadow-md shadow-black/20"
+                    />
+                  ) : (
+                    <div
+                      key={game.title}
+                      className={`flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br ${game.accent} text-sm font-black text-white shadow-md shadow-black/20`}
+                      aria-label={game.label}
+                    >
+                      {game.label.replace("Project ", "")}
+                    </div>
+                  )
+                )}
               </div>
             </motion.div>
           </motion.div>
@@ -539,7 +563,7 @@ export default function Home() {
             className="text-center lg:text-left"
           >
             <p className="text-purple-600 text-xs font-semibold uppercase tracking-[0.18em] mb-4">
-              Coming Soon
+              {currentFeaturedGame.live ? "Available Now" : "Coming Soon"}
             </p>
             <AnimatePresence mode="wait">
               <motion.div
@@ -562,15 +586,27 @@ export default function Home() {
             </AnimatePresence>
 
             <div className="mt-7 flex flex-col items-center gap-3 sm:flex-row lg:justify-start">
-              <a
-                href="#games"
-                className="inline-flex items-center rounded-full bg-[hsl(228,45%,8%)] px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-gray-300/60 transition-transform hover:-translate-y-0.5"
-              >
-                Explore upcoming games
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </a>
+              {currentFeaturedGame.live ? (
+                <a
+                  href={currentFeaturedGame.appStoreUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center rounded-full bg-[hsl(228,45%,8%)] px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-gray-300/60 transition-transform hover:-translate-y-0.5"
+                >
+                  Download on the App Store
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </a>
+              ) : (
+                <a
+                  href="#games"
+                  className="inline-flex items-center rounded-full bg-[hsl(228,45%,8%)] px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-gray-300/60 transition-transform hover:-translate-y-0.5"
+                >
+                  Explore upcoming games
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </a>
+              )}
               <span className="rounded-full bg-gray-100 px-4 py-2 text-sm font-semibold text-gray-600">
-                Coming soon to iPhone
+                {currentFeaturedGame.live ? "Available on the App Store" : "Coming soon to iPhone"}
               </span>
             </div>
 
@@ -788,9 +824,6 @@ export default function Home() {
             transition={{ duration: 0.6 }}
             className="text-center mb-14"
           >
-            <p className="text-purple-600 text-xs font-semibold uppercase tracking-[0.18em] mb-4">
-              Coming Soon
-            </p>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
               Games We’re Building
             </h2>
@@ -814,9 +847,17 @@ export default function Home() {
                 <div className={`absolute inset-x-0 top-0 h-28 bg-gradient-to-br ${game.accent} opacity-[0.18] blur-2xl transition-opacity duration-300 group-hover:opacity-[0.35]`} />
                 <div className="relative">
                   <div className="relative mb-5 overflow-hidden rounded-[1.8rem] bg-gray-950/5 p-2">
-                    <div className={`flex w-full aspect-square items-center justify-center rounded-[1.5rem] bg-gradient-to-br ${game.accent} text-5xl font-black text-white shadow-lg shadow-gray-200 transition-transform duration-300 group-hover:scale-[1.04]`}>
-                      {game.label.replace("Project ", "")}
-                    </div>
+                    {game.icon ? (
+                      <img
+                        src={game.icon}
+                        alt={`${game.title} app icon`}
+                        className="w-full aspect-square rounded-[1.5rem] object-cover shadow-lg shadow-gray-200 transition-transform duration-300 group-hover:scale-[1.04]"
+                      />
+                    ) : (
+                      <div className={`flex w-full aspect-square items-center justify-center rounded-[1.5rem] bg-gradient-to-br ${game.accent} text-5xl font-black text-white shadow-lg shadow-gray-200 transition-transform duration-300 group-hover:scale-[1.04]`}>
+                        {game.label.replace("Project ", "")}
+                      </div>
+                    )}
                     <div className="absolute right-4 top-4 rounded-full bg-white/90 px-2.5 py-1 text-[0.68rem] font-bold uppercase tracking-[0.12em] text-gray-700 shadow-sm">
                       iPhone
                     </div>
@@ -827,10 +868,22 @@ export default function Home() {
                   <h3 className="text-gray-950 font-semibold text-lg mb-2">{game.title}</h3>
                   <p className="text-gray-500 text-sm leading-relaxed">{game.desc}</p>
                 </div>
-                <div className="mt-4 inline-flex items-center rounded-full bg-gray-100 px-3 py-1.5 text-xs font-semibold text-gray-600">
-                  <Smartphone className="mr-1.5 h-3.5 w-3.5" />
-                  Coming soon to iPhone
-                </div>
+                {game.live ? (
+                  <a
+                    href={game.appStoreUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-4 inline-flex items-center rounded-full bg-gray-950 px-3 py-1.5 text-xs font-semibold text-white transition-colors hover:bg-gray-800"
+                  >
+                    <Smartphone className="mr-1.5 h-3.5 w-3.5" />
+                    Download on the App Store
+                  </a>
+                ) : (
+                  <div className="mt-4 inline-flex items-center rounded-full bg-gray-100 px-3 py-1.5 text-xs font-semibold text-gray-600">
+                    <Smartphone className="mr-1.5 h-3.5 w-3.5" />
+                    Coming soon to iPhone
+                  </div>
+                )}
                 <details className="group mt-4 rounded-xl bg-gray-50 p-4">
                   <summary className="flex cursor-pointer list-none items-center justify-between gap-3 text-sm font-semibold text-gray-900">
                     Game details
@@ -844,10 +897,10 @@ export default function Home() {
                     ))}
                   </ul>
                   <a
-                    href="mailto:support@silverlinegames.co.uk?subject=Upcoming%20Game%20Support"
+                    href={`mailto:support@silverlinegames.co.uk?subject=${game.live ? "Player%20Support" : "Upcoming%20Game%20Support"}`}
                     className="mt-4 inline-flex items-center text-sm font-semibold text-purple-600 hover:text-purple-700"
                   >
-                    Support for upcoming games
+                    {game.live ? "Get player support" : "Support for upcoming games"}
                   </a>
                 </details>
               </motion.article>
