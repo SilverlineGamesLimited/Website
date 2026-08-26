@@ -20,8 +20,8 @@ export function Footer() {
               </span>
             </div>
             <p className="text-white/50 text-sm leading-relaxed max-w-xs">
-              A UK mobile games publisher preparing friendly iPhone games for players
-              worldwide.
+              A UK mobile games publisher building friendly iOS and Android games
+              for players worldwide.
             </p>
           </div>
 

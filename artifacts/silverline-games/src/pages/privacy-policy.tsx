@@ -78,9 +78,9 @@ export default function PrivacyPolicy() {
               <section>
                 <h2 className="text-white text-xl font-semibold mb-4">1. Who We Are</h2>
                 <p className="mb-4">
-                  Silverline Games Limited ("we", "us", or "our") develops and prepares
-                  mobile games for iPhone. This privacy policy applies to the following
-                  upcoming game projects:
+                  Silverline Games Limited ("we", "us", or "our") develops and publishes
+                  mobile games. This privacy policy applies to the following game
+                  projects:
                 </p>
                 <ul className="space-y-2 pl-5 list-disc mb-5">
                   {appNames.map((app) => (

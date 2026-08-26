@@ -5,15 +5,15 @@ import { Link } from "wouter";
 const sections = [
   {
     title: "1. Who We Are",
-    body: "Silverline Games Limited is a mobile games developer and publisher registered in England and Wales. Our website provides information about our company, upcoming games, support routes, and player policies.",
+    body: "Silverline Games Limited is a mobile games developer and publisher registered in England and Wales. Our website provides information about our company, published and upcoming games, support routes, and player policies.",
   },
   {
     title: "2. Using Our Website",
-    body: "You may use this website to learn about Silverline Games Limited, view the games we are preparing, read policy information, and contact support. Please do not misuse the website, attempt to disrupt it, or use it for unlawful activity.",
+    body: "You may use this website to learn about Silverline Games Limited, view our published and upcoming games, read policy information, and contact support. Please do not misuse the website, attempt to disrupt it, or use it for unlawful activity.",
   },
   {
-    title: "3. Upcoming Games",
-    body: "Our games are being prepared for iPhone release and may be distributed through the Apple App Store. They may use Apple services such as Game Center, StoreKit, and push notifications where available. Once live, App Store downloads, purchases, refunds, and subscriptions will be managed by Apple under Apple's own terms.",
+    title: "3. Our Games",
+    body: "Our games are distributed through the Apple App Store and, where available, Google Play. They may use platform services such as Game Center, StoreKit, Google Play Games, and push notifications. App Store and Google Play downloads, purchases, refunds, and subscriptions are managed by Apple or Google under their own terms.",
   },
   {
     title: "4. Player Support",

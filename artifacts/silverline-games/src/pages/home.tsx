@@ -81,7 +81,7 @@ const serviceHighlights = [
   {
     icon: Store,
     title: "Mobile Publishing",
-    desc: "We are preparing friendly iPhone games for release, with a focus on accessible, player-friendly experiences.",
+    desc: "We publish friendly mobile games for iOS and Android, with a focus on accessible, player-friendly experiences.",
   },
   {
     icon: Gamepad2,
@@ -105,8 +105,8 @@ const serviceHighlights = [
   },
   {
     icon: Smartphone,
-    title: "iPhone Focus",
-    desc: "Our upcoming games are built for iPhone, using Apple services such as Game Center and StoreKit where appropriate.",
+    title: "iOS & Android",
+    desc: "Our games are built for iPhone first, with Android versions in development, using platform services such as Game Center and StoreKit where appropriate.",
   },
 ];
 
@@ -207,7 +207,7 @@ const featuredGame = games[0];
 
 const heroStats = [
   { label: "4", detail: "Games in our lineup" },
-  { label: "iPhone", detail: "Built for phone play" },
+  { label: "Mobile", detail: "Built for iOS & Android" },
   { label: "UK", detail: "Registered publisher" },
 ];
 
@@ -231,7 +231,7 @@ const quickPlay = [
 
 const supportSteps = [
   "Tell us which game you are playing.",
-  "Include your iPhone model and iOS version if you can.",
+  "Include your device model and OS version if you can.",
   "Describe what happened and any purchase, advert, or gameplay issue clearly.",
 ];
 
@@ -422,7 +422,7 @@ export default function Home() {
                 Independent Mobile Game Publisher
               </p>
               <h1 className="mx-auto max-w-3xl text-4xl font-bold leading-tight text-white md:text-6xl lg:mx-0">
-                Building bright, friendly iPhone games for players everywhere.
+                Building bright, friendly mobile games for players everywhere.
               </h1>
               <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/72 md:text-xl">
                 Gem Kingdom is out now on the App Store, with more quick-play games
@@ -606,7 +606,7 @@ export default function Home() {
                 </a>
               )}
               <span className="rounded-full bg-gray-100 px-4 py-2 text-sm font-semibold text-gray-600">
-                {currentFeaturedGame.live ? "Available on the App Store" : "Coming soon to iPhone"}
+                {currentFeaturedGame.live ? "Available on the App Store" : "Coming soon"}
               </span>
             </div>
 
@@ -670,7 +670,7 @@ export default function Home() {
             <p className="text-white/75 text-lg leading-relaxed">
               Silverline Games Limited is a mobile games publisher dedicated to
               building high-quality gaming experiences for players around the world.
-              We are preparing approachable iPhone games with clear information,
+              We build approachable mobile games with clear information,
               responsible support routes, and player-friendly design.
             </p>
           </motion.div>
@@ -828,7 +828,7 @@ export default function Home() {
               Our Games
             </h2>
             <p className="text-gray-500 text-lg leading-relaxed max-w-2xl mx-auto">
-              Gem Kingdom is available now, with more iPhone games in development at Silverline Games Limited.
+              Gem Kingdom is available now, with more mobile games in development at Silverline Games Limited.
             </p>
           </motion.div>
 
@@ -859,7 +859,7 @@ export default function Home() {
                       </div>
                     )}
                     <div className="absolute right-4 top-4 rounded-full bg-white/90 px-2.5 py-1 text-[0.68rem] font-bold uppercase tracking-[0.12em] text-gray-700 shadow-sm">
-                      iPhone
+                      Mobile
                     </div>
                   </div>
                   <p className={`${game.highlight} text-xs font-semibold uppercase tracking-[0.14em] mb-2`}>
@@ -868,22 +868,30 @@ export default function Home() {
                   <h3 className="text-gray-950 font-semibold text-lg mb-2">{game.title}</h3>
                   <p className="text-gray-500 text-sm leading-relaxed">{game.desc}</p>
                 </div>
-                {game.live ? (
-                  <a
-                    href={game.appStoreUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-4 inline-flex items-center rounded-full bg-gray-950 px-3 py-1.5 text-xs font-semibold text-white transition-colors hover:bg-gray-800"
-                  >
-                    <Smartphone className="mr-1.5 h-3.5 w-3.5" />
-                    Download on the App Store
-                  </a>
-                ) : (
-                  <div className="mt-4 inline-flex items-center rounded-full bg-gray-100 px-3 py-1.5 text-xs font-semibold text-gray-600">
-                    <Smartphone className="mr-1.5 h-3.5 w-3.5" />
-                    Coming soon to iPhone
-                  </div>
-                )}
+                <div className="mt-4 flex flex-wrap items-center gap-2">
+                  {game.live ? (
+                    <a
+                      href={game.appStoreUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center rounded-full bg-gray-950 px-3 py-1.5 text-xs font-semibold text-white transition-colors hover:bg-gray-800"
+                    >
+                      <Smartphone className="mr-1.5 h-3.5 w-3.5" />
+                      Download on the App Store
+                    </a>
+                  ) : (
+                    <div className="inline-flex items-center rounded-full bg-gray-100 px-3 py-1.5 text-xs font-semibold text-gray-600">
+                      <Smartphone className="mr-1.5 h-3.5 w-3.5" />
+                      Coming soon
+                    </div>
+                  )}
+                  {game.live && (
+                    <div className="inline-flex items-center rounded-full bg-gray-100 px-3 py-1.5 text-xs font-semibold text-gray-600">
+                      <Smartphone className="mr-1.5 h-3.5 w-3.5" />
+                      Android — coming soon
+                    </div>
+                  )}
+                </div>
                 <details className="group mt-4 rounded-xl bg-gray-50 p-4">
                   <summary className="flex cursor-pointer list-none items-center justify-between gap-3 text-sm font-semibold text-gray-900">
                     Game details
