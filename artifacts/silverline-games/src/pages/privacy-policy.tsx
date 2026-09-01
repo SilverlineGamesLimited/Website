@@ -9,31 +9,50 @@ const appNames = [
   "Arcade Tap Game",
   "Seasonal Catch Game",
   "Garden Strategy Game",
+  "Any other Silverline Games title that links to this policy",
 ];
 
 const thirdPartyServices = [
   {
     service: "Google AdMob",
-    purpose: "Advertising",
+    purpose: "Advertising, measurement, analytics and fraud prevention",
+    policy: "policies.google.com/privacy",
+    href: "https://policies.google.com/privacy",
+  },
+  {
+    service: "Google User Messaging Platform",
+    purpose: "Advertising consent choices",
+    policy: "policies.google.com/privacy",
+    href: "https://policies.google.com/privacy",
+  },
+  {
+    service: "Google Play Games Services",
+    purpose: "Player sign-in, leaderboards and achievements",
+    policy: "policies.google.com/privacy",
+    href: "https://policies.google.com/privacy",
+  },
+  {
+    service: "Google Play Billing and Google Play",
+    purpose: "Android in-app purchases",
     policy: "policies.google.com/privacy",
     href: "https://policies.google.com/privacy",
   },
   {
     service: "Apple Game Center",
-    purpose: "Leaderboards & achievements",
+    purpose: "Player identity, leaderboards and achievements",
     policy: "apple.com/legal/privacy",
     href: "https://www.apple.com/legal/privacy/",
   },
   {
-    service: "Apple StoreKit",
-    purpose: "In-app purchases",
+    service: "Apple StoreKit and the App Store",
+    purpose: "iOS in-app purchases",
     policy: "apple.com/legal/privacy",
     href: "https://www.apple.com/legal/privacy/",
   },
   {
-    service: "Apple Push Notifications",
-    purpose: "Game notifications",
-    policy: "apple.com/legal/privacy",
+    service: "Apple and Google platform services",
+    purpose: "Device notifications, local storage and backups",
+    policy: "Apple or Google privacy policy",
     href: "https://www.apple.com/legal/privacy/",
   },
 ];
@@ -71,22 +90,26 @@ export default function PrivacyPolicy() {
 
             <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">Privacy Policy</h1>
             <p className="text-white/40 text-sm font-mono tracking-wider mb-10 pb-8 border-b border-white/10">
-              LAST UPDATED: JUNE 2026
+              LAST UPDATED: SEPTEMBER 2026
             </p>
 
             <div className="space-y-10 text-white/70 leading-relaxed">
               <section>
                 <h2 className="text-white text-xl font-semibold mb-4">1. Who We Are</h2>
                 <p className="mb-4">
-                  Silverline Games Limited ("we", "us", or "our") develops and publishes
-                  mobile games. This privacy policy applies to the following game
-                  projects:
+                  Silverline Games Limited (&quot;we&quot;, &quot;us&quot;, or &quot;our&quot;)
+                  develops and publishes mobile games for iOS and Android. This privacy policy
+                  applies to the following game projects:
                 </p>
                 <ul className="space-y-2 pl-5 list-disc mb-5">
                   {appNames.map((app) => (
                     <li key={app}>{app}</li>
                   ))}
                 </ul>
+                <p className="mb-5">
+                  The features and third-party services used may differ between games and
+                  platforms.
+                </p>
                 <div className="bg-white/5 border border-white/10 rounded-xl p-6 space-y-2 text-sm">
                   <p><span className="text-white/50">Registered company number:</span> <span className="text-white/90 ml-1">17282798</span></p>
                   <p><span className="text-white/50">Registered office:</span> <span className="text-white/90 ml-1">4 Underwood Rise, Tunbridge Wells, Kent, TN2 5RY, United Kingdom</span></p>
@@ -104,124 +127,214 @@ export default function PrivacyPolicy() {
               </section>
 
               <section>
-                <h2 className="text-white text-xl font-semibold mb-4">2. What Data We Collect</h2>
-
-                <h3 className="text-white/90 font-semibold mb-2">2.1 Data stored locally on your device</h3>
-                <p className="mb-5">
-                  All game progress, settings, coin balances, power-ups, daily streaks,
-                  and preferences are stored locally on your device using Apple's standard
-                  storage. This data never leaves your device and we cannot access it.
+                <h2 className="text-white text-xl font-semibold mb-4">2. How to Delete Your Data</h2>
+                <div className="bg-purple-500/10 border border-purple-300/20 rounded-xl p-6 mb-5">
+                  <p className="text-white/90 font-semibold mb-2">Request deletion from Silverline Games</p>
+                  <p className="mb-3">
+                    Our games do not currently require a Silverline Games account, and we do
+                    not maintain our own server-side personal gameplay profiles.
+                  </p>
+                  <ol className="space-y-2 pl-5 list-decimal">
+                    <li>Email <a href="mailto:support@silverlinegames.co.uk" className="text-purple-300 hover:text-purple-200 transition-colors">support@silverlinegames.co.uk</a>.</li>
+                    <li>Use the subject line <span className="text-white/90">Data Deletion Request</span>.</li>
+                    <li>Tell us which Silverline Games title and platform you use.</li>
+                    <li>Describe the information you want us to delete.</li>
+                  </ol>
+                </div>
+                <p className="mb-4">
+                  Do not send passwords, payment-card details or unnecessary identity
+                  documents. We may request limited additional information if reasonably
+                  necessary to find or verify the relevant information.
                 </p>
-
-                <h3 className="text-white/90 font-semibold mb-2">2.2 Advertising data (Google AdMob)</h3>
-                <p className="mb-3">
-                  Our games display advertisements provided by Google AdMob. Depending on
-                  your tracking preference, AdMob may collect:
+                <p className="mb-4">
+                  We will delete eligible information we control unless it must be retained
+                  for legal, security, fraud-prevention or dispute-resolution purposes. We
+                  will normally respond within one month where applicable law requires this.
                 </p>
-                <ul className="space-y-2 pl-5 list-disc mb-5">
-                  <li>Device advertising identifier (IDFA)</li>
-                  <li>Coarse location (country or region level, for ad targeting)</li>
-                  <li>Ad interaction data (impressions, clicks)</li>
-                  <li>App usage and performance data</li>
+                <h3 className="text-white/90 font-semibold mb-2">Delete locally stored game data</h3>
+                <p className="mb-3">You can delete locally stored game information by:</p>
+                <ul className="space-y-2 pl-5 list-disc mb-4">
+                  <li>Using any reset or delete-progress feature available in the game</li>
+                  <li>Clearing the app&apos;s storage through your Android device settings</li>
+                  <li>Deleting the app from your iOS or Android device</li>
                 </ul>
-                <p className="mb-5">
-                  If you deny tracking permission when prompted, only non-personalised ads
-                  will be shown and your advertising identifier will not be used.
+                <p className="mb-4">
+                  Information may be restored if your device restores the app from an Apple
+                  or Google backup. You can manage or delete backups through your Apple or
+                  Google account settings. Deleting game data may permanently remove progress,
+                  virtual currency, settings and other content that cannot later be recovered.
                 </p>
-
-                <h3 className="text-white/90 font-semibold mb-2">2.3 Game Center (Apple)</h3>
-                <p className="mb-5">
-                  If you use Apple Game Center, your Game Center player ID is used to submit
-                  scores to leaderboards and track achievements. This data is managed entirely
-                  by Apple and subject to Apple's Privacy Policy.
-                </p>
-
-                <h3 className="text-white/90 font-semibold mb-2">2.4 In-App Purchases</h3>
-                <p className="mb-5">
-                  Purchases are processed entirely by Apple through the App Store. We do not
-                  collect or store your payment information. Apple's handling of purchase data
-                  is governed by Apple's Privacy Policy.
-                </p>
-
-                <h3 className="text-white/90 font-semibold mb-2">2.5 Crash and diagnostic data</h3>
+                <h3 className="text-white/90 font-semibold mb-2">Delete third-party account data</h3>
+                <ul className="space-y-2 pl-5 list-disc mb-4">
+                  <li><span className="text-white/90">Google Play Games:</span> Manage or delete your Play Games profile and individual game data through Google Play Games or your Google Account settings.</li>
+                  <li><span className="text-white/90">Apple Game Center:</span> Manage Game Center information through your Apple Account and Apple&apos;s privacy services.</li>
+                  <li><span className="text-white/90">Store purchases:</span> Google and Apple control their respective Google Play and App Store transaction records.</li>
+                </ul>
                 <p>
-                  Basic crash reports and performance diagnostics may be collected by the
-                  Google AdMob SDK to maintain ad service quality. This data is not linked
-                  to you personally.
+                  Apple and Google may retain transaction records for accounting,
+                  fraud-prevention and legal purposes. We cannot delete information held
+                  solely by Apple or Google.
                 </p>
               </section>
 
               <section>
-                <h2 className="text-white text-xl font-semibold mb-4">3. App Tracking Transparency</h2>
-                <p className="mb-4">
-                  On iOS 14 and above, we ask for your permission before accessing your
-                  device's advertising identifier, in compliance with Apple's App Tracking
-                  Transparency framework.
+                <h2 className="text-white text-xl font-semibold mb-4">3. What Data We Collect</h2>
+
+                <h3 className="text-white/90 font-semibold mb-2">3.1 Data stored locally on your device</h3>
+                <p className="mb-3">
+                  Game progress and preferences may be stored locally using storage provided
+                  by Apple or Android. This may include:
                 </p>
                 <ul className="space-y-2 pl-5 list-disc mb-4">
-                  <li>If you allow tracking: Google AdMob will show personalised advertisements based on your interests.</li>
-                  <li>If you deny tracking: Google AdMob will show non-personalised advertisements only. Your experience of the game is not affected in any way.</li>
+                  <li>Game progress and scores</li>
+                  <li>Coin balances, virtual items and power-ups</li>
+                  <li>Daily rewards and streak information</li>
+                  <li>Settings, preferences and tutorial completion</li>
+                  <li>Notification preferences</li>
+                  <li>Locally recorded purchase-entitlement information</li>
                 </ul>
+                <p className="mb-5">
+                  We do not currently transmit this local gameplay information to our own
+                  servers. It may be included in an Apple or Google device backup when backups
+                  are enabled.
+                </p>
+
+                <h3 className="text-white/90 font-semibold mb-2">3.2 Advertising data — Google AdMob</h3>
+                <p className="mb-3">
+                  Some of our games display advertisements provided by Google AdMob. Depending
+                  on your platform, location, device settings and consent choices, Google and
+                  its advertising partners may process:
+                </p>
+                <ul className="space-y-2 pl-5 list-disc mb-4">
+                  <li>Your IP address and approximate location derived from it</li>
+                  <li>Advertising identifiers, device identifiers and app-set identifiers</li>
+                  <li>Advertisement impressions, views and interactions</li>
+                  <li>App usage and product-interaction data</li>
+                  <li>Device, operating-system and app-version information</li>
+                  <li>Crash reports, diagnostics and performance information</li>
+                  <li>Advertising consent and privacy-choice information</li>
+                </ul>
+                <p className="mb-3">This information may be used to:</p>
+                <ul className="space-y-2 pl-5 list-disc mb-4">
+                  <li>Display and measure third-party advertisements</li>
+                  <li>Provide personalised advertising where permitted</li>
+                  <li>Provide contextual or non-personalised advertising</li>
+                  <li>Measure advertising and promotional performance</li>
+                  <li>Perform analytics and improve service performance</li>
+                  <li>Detect fraud, abuse and invalid advertising activity</li>
+                </ul>
+                <p className="mb-5">
+                  Depending on the service configuration and your consent choices,
+                  advertising information may be associated with a device or account
+                  identifier and may be used for tracking. Declining personalised advertising
+                  does not prevent limited processing needed to deliver contextual ads,
+                  measure performance, limit frequency and prevent fraud.
+                </p>
+
+                <h3 className="text-white/90 font-semibold mb-2">3.3 Apple Game Center</h3>
+                <p className="mb-5">
+                  Some iOS games may use Apple Game Center for optional player sign-in,
+                  leaderboards and achievements. If you use Game Center, Apple may process
+                  your Game Center player identifier, gamer identity, scores, achievements
+                  and related account or device information. We do not receive or store your
+                  Apple Account password.
+                </p>
+
+                <h3 className="text-white/90 font-semibold mb-2">3.4 Google Play Games Services</h3>
+                <p className="mb-3">
+                  Some Android games may use Google Play Games Services for optional player
+                  sign-in, leaderboards and achievements. If you use these features, Google
+                  may process:
+                </p>
+                <ul className="space-y-2 pl-5 list-disc mb-4">
+                  <li>Your Play Games player identifier and gamer identity</li>
+                  <li>Scores and achievements</li>
+                  <li>Device identifiers</li>
+                  <li>IP address and approximate location</li>
+                  <li>Account name or email address where made available through your Google account settings</li>
+                </ul>
+                <p className="mb-5">
+                  We use information made available through Google Play Games only to provide
+                  game features, submit scores, unlock achievements and troubleshoot those
+                  features. We do not receive or store your Google Account password. Where
+                  sign-in is optional, you can continue using the main game without signing in,
+                  although related social features may be unavailable.
+                </p>
+
+                <h3 className="text-white/90 font-semibold mb-2">3.5 In-app purchases</h3>
+                <p className="mb-3">
+                  Some games offer optional purchases through Apple StoreKit or Google Play
+                  Billing. Apple or Google processes your payment method and financial
+                  information. We do not receive your complete payment-card or bank-account
+                  details. The app may receive:
+                </p>
+                <ul className="space-y-2 pl-5 list-disc mb-4">
+                  <li>The product purchased</li>
+                  <li>Transaction or purchase status</li>
+                  <li>A transaction identifier or purchase token</li>
+                  <li>Entitlement information needed to deliver or restore a purchase</li>
+                </ul>
+                <p className="mb-5">
+                  Limited purchase-token or entitlement information may be stored locally on
+                  your device to provide purchased content and prevent duplicate delivery.
+                </p>
+
+                <h3 className="text-white/90 font-semibold mb-2">3.6 Crash, diagnostic and performance information</h3>
                 <p>
-                  You can change your tracking preference at any time in your iPhone Settings
-                  &rarr; Privacy &amp; Security &rarr; Tracking.
+                  Google AdMob and other platform services may process crash reports,
+                  diagnostic information, performance measurements, device characteristics
+                  and related app-interaction information for analytics, troubleshooting,
+                  fraud prevention, reliability and performance measurement. We do not
+                  intentionally use this information to identify you by name.
                 </p>
               </section>
 
               <section>
-                <h2 className="text-white text-xl font-semibold mb-4">4. Notifications</h2>
-                <p className="mb-3">
-                  Our games may request permission to send you push notifications. We use
-                  notifications for:
-                </p>
-                <ul className="space-y-2 pl-5 list-disc mb-4">
-                  <li>Reminding you about daily rewards and challenges</li>
-                  <li>Maintaining your daily play streak</li>
-                  <li>Encouraging you to return after periods of inactivity</li>
-                </ul>
+                <h2 className="text-white text-xl font-semibold mb-4">4. Advertising and Tracking Choices</h2>
+                <h3 className="text-white/90 font-semibold mb-2">4.1 iOS App Tracking Transparency</h3>
                 <p className="mb-4">
-                  Notifications are entirely optional. You can enable or disable them at any
-                  time in your iPhone Settings &rarr; Notifications &rarr; [App Name].
+                  On supported versions of iOS, a game will request permission before
+                  accessing the device&apos;s advertising identifier or performing activity
+                  Apple defines as tracking. If you decline, contextual or non-personalised
+                  ads may still be displayed. You can change your choice in iPhone or iPad
+                  Settings &rarr; Privacy &amp; Security &rarr; Tracking.
                 </p>
+                <h3 className="text-white/90 font-semibold mb-2">4.2 Android advertising consent</h3>
                 <p>
-                  We do not use notifications to send marketing messages or share your data
-                  with third parties.
+                  On Android, some games use Google&apos;s User Messaging Platform to collect
+                  and record advertising consent choices where required. Depending on your
+                  location, you may be offered personalised ads, non-personalised ads or
+                  controls for advertising partners. Where an in-app privacy-options control
+                  is available, you can use it to review your choices. You can also manage or
+                  reset your Android advertising identifier through your device settings.
                 </p>
               </section>
 
               <section>
-                <h2 className="text-white text-xl font-semibold mb-4">5. In-App Purchases</h2>
-                <p className="mb-3">
-                  Our games offer optional in-app purchases including coin bundles and
-                  one-time starter packs. All transactions are:
-                </p>
+                <h2 className="text-white text-xl font-semibold mb-4">5. Notifications</h2>
+                <p className="mb-3">Our games may request permission to send notifications for:</p>
                 <ul className="space-y-2 pl-5 list-disc mb-4">
-                  <li>Processed securely by Apple through the App Store</li>
-                  <li>Subject to Apple's Terms of Sale</li>
-                  <li>Non-refundable except where required by law</li>
+                  <li>Daily rewards or challenges</li>
+                  <li>Daily play streaks</li>
+                  <li>Informing you that a game feature is available</li>
+                  <li>Encouraging you to return after a period of inactivity</li>
                 </ul>
-                <p className="mb-4">
-                  We do not have access to your payment card details or billing information
-                  at any point.
-                </p>
                 <p>
-                  To request a refund, please contact Apple directly via{" "}
-                  <a
-                    href="https://reportaproblem.apple.com"
-                    className="text-purple-300 hover:text-purple-200 transition-colors"
-                  >
-                    reportaproblem.apple.com
-                  </a>.
+                  Notifications are optional and can be disabled through your iOS or Android
+                  notification settings. Notifications used by our current games are generally
+                  scheduled through the device. We do not currently operate a separate
+                  marketing-notification server or sell notification information to mailing-list
+                  providers.
                 </p>
               </section>
 
               <section>
                 <h2 className="text-white text-xl font-semibold mb-4">6. Third-Party Services</h2>
                 <p className="mb-5">
-                  Our games use the following third-party services, each governed by their
-                  own privacy policies:
+                  Depending on the game and platform, our games may use the following services,
+                  each governed by its provider&apos;s own privacy terms:
                 </p>
-                <div className="overflow-x-auto rounded-xl border border-white/10">
+                <div className="overflow-x-auto rounded-xl border border-white/10 mb-5">
                   <table className="w-full text-sm">
                     <thead className="bg-white/5 text-white/80">
                       <tr>
@@ -236,10 +349,7 @@ export default function PrivacyPolicy() {
                           <td className="p-4 text-white/80">{item.service}</td>
                           <td className="p-4">{item.purpose}</td>
                           <td className="p-4">
-                            <a
-                              href={item.href}
-                              className="text-purple-300 hover:text-purple-200 transition-colors"
-                            >
+                            <a href={item.href} className="text-purple-300 hover:text-purple-200 transition-colors">
                               {item.policy}
                             </a>
                           </td>
@@ -248,30 +358,38 @@ export default function PrivacyPolicy() {
                     </tbody>
                   </table>
                 </div>
+                <p className="mb-3">
+                  Google provides additional information about advertising technologies at{" "}
+                  <a href="https://policies.google.com/technologies/ads" className="text-purple-300 hover:text-purple-200 transition-colors">
+                    policies.google.com/technologies/ads
+                  </a>.
+                </p>
+                <p>
+                  These providers may process information independently under their own
+                  privacy policies. Silverline Games does not sell personal information.
+                </p>
               </section>
 
               <section>
-                <h2 className="text-white text-xl font-semibold mb-4">7. Children's Privacy</h2>
+                <h2 className="text-white text-xl font-semibold mb-4">7. Children&apos;s Privacy</h2>
                 <p>
-                  Our games are designed for a general audience aged 13 and over. We do not
-                  knowingly collect personal data from children under 13. If you believe a
-                  child under 13 has provided personal data through one of our games, please
-                  contact us at{" "}
-                  <a
-                    href="mailto:support@silverlinegames.co.uk"
-                    className="text-purple-300 hover:text-purple-200 transition-colors"
-                  >
+                  Our games are designed for a general audience aged 13 and over and are not
+                  directed to children under 13. We do not knowingly collect personal
+                  information directly from children under 13. If you believe a child under 13
+                  has provided personal information through one of our games, contact us at{" "}
+                  <a href="mailto:support@silverlinegames.co.uk" className="text-purple-300 hover:text-purple-200 transition-colors">
                     support@silverlinegames.co.uk
                   </a>{" "}
-                  and we will take steps to delete it.
+                  and we will investigate and take appropriate deletion steps.
                 </p>
               </section>
 
               <section>
                 <h2 className="text-white text-xl font-semibold mb-4">8. Your Rights Under UK GDPR</h2>
                 <p className="mb-4">
-                  As a UK-based company, we comply with the UK General Data Protection
-                  Regulation (UK GDPR). You have the right to:
+                  Silverline Games Limited is based in the United Kingdom and complies with
+                  applicable UK data-protection law. Depending on the circumstances, you may
+                  have the right to:
                 </p>
                 <ul className="space-y-2 pl-5 list-disc mb-5">
                   {rights.map((right) => (
@@ -279,62 +397,79 @@ export default function PrivacyPolicy() {
                   ))}
                 </ul>
                 <p className="mb-4">
-                  As the majority of data in our games is stored locally on your device and
-                  not on our servers, exercising most of these rights can be achieved by
-                  deleting the app from your device.
+                  Because most gameplay information is stored locally and we do not currently
+                  operate personal gameplay-profile servers, we may hold little or no information
+                  capable of identifying an individual player. Information controlled by Apple
+                  or Google must normally be accessed or deleted through the relevant provider.
                 </p>
                 <p className="mb-4">
-                  For any data held by third-party services (Google, Apple), please contact
-                  those providers directly using the links in Section 6.
+                  To exercise your rights, email{" "}
+                  <a href="mailto:support@silverlinegames.co.uk" className="text-purple-300 hover:text-purple-200 transition-colors">
+                    support@silverlinegames.co.uk
+                  </a>.
                 </p>
                 <p>
-                  To exercise any of the above rights, contact us at:{" "}
-                  <a
-                    href="mailto:support@silverlinegames.co.uk"
-                    className="text-purple-300 hover:text-purple-200 transition-colors"
-                  >
-                    support@silverlinegames.co.uk
-                  </a>
+                  You may also complain to the UK Information Commissioner&apos;s Office at{" "}
+                  <a href="https://ico.org.uk" className="text-purple-300 hover:text-purple-200 transition-colors">
+                    ico.org.uk
+                  </a>.
                 </p>
               </section>
 
               <section>
                 <h2 className="text-white text-xl font-semibold mb-4">9. Data Security</h2>
-                <p className="mb-4">
-                  We take reasonable steps to protect your data. Game data is stored locally
-                  on your device and protected by your device's own security. We do not
-                  operate servers that store your personal gameplay data.
-                </p>
                 <p>
-                  For advertising data, Google AdMob implements its own security measures.
-                  Please refer to Google's privacy policy for details.
+                  We take reasonable technical and organisational steps to protect information
+                  under our control. Local game information is protected by your device and
+                  operating system. Information transmitted by integrated Apple or Google
+                  services is generally protected in transit using encrypted connections. No
+                  electronic storage or transmission method is completely secure, and we cannot
+                  guarantee absolute security for information processed by third-party platforms.
                 </p>
               </section>
 
               <section>
                 <h2 className="text-white text-xl font-semibold mb-4">10. Data Retention</h2>
-                <p>
-                  Local game data is retained on your device until you delete the app.
-                  Advertising and diagnostic data collected by Google AdMob is subject to
-                  Google's own retention policies. We do not retain personal data on our
+                <p className="mb-4">
+                  Local game information remains on your device until it is reset, cleared or
+                  deleted. It may remain in device backups until those backups expire or are
+                  deleted.
+                </p>
+                <p className="mb-4">
+                  Advertising, account, purchase and diagnostic information processed by Apple,
+                  Google or their partners is retained according to their respective policies and
+                  legal obligations. We do not currently retain personal gameplay profiles on our
                   own servers.
                 </p>
-              </section>
-
-              <section>
-                <h2 className="text-white text-xl font-semibold mb-4">11. Changes to This Policy</h2>
                 <p>
-                  We may update this privacy policy from time to time. We will update the
-                  "Last updated" date at the top of this page when we do. We encourage you
-                  to review this policy periodically.
+                  Support correspondence is retained only as long as reasonably necessary to
+                  respond, protect our games, resolve disputes and comply with applicable law.
                 </p>
               </section>
 
               <section>
-                <h2 className="text-white text-xl font-semibold mb-4">12. Contact Us</h2>
+                <h2 className="text-white text-xl font-semibold mb-4">11. International Data Transfers</h2>
+                <p>
+                  Apple, Google and their service providers may process information outside the
+                  United Kingdom or your country of residence. These providers describe their
+                  international-transfer safeguards in their respective privacy policies.
+                </p>
+              </section>
+
+              <section>
+                <h2 className="text-white text-xl font-semibold mb-4">12. Changes to This Policy</h2>
+                <p>
+                  We may update this privacy policy when our games, service providers or legal
+                  obligations change. We will change the &quot;Last updated&quot; date above when
+                  we do. We encourage you to review this policy periodically.
+                </p>
+              </section>
+
+              <section>
+                <h2 className="text-white text-xl font-semibold mb-4">13. Contact Us</h2>
                 <p className="mb-5">
-                  If you have any questions about this privacy policy or how we handle your
-                  data, please contact us:
+                  If you have questions about this privacy policy or how information is handled,
+                  please contact us:
                 </p>
                 <div className="bg-white/5 border border-white/10 rounded-xl p-6 space-y-2 text-sm">
                   <p><span className="text-white/50">Silverline Games Limited</span></p>
@@ -342,10 +477,7 @@ export default function PrivacyPolicy() {
                   <p><span className="text-white/50">Company Number:</span> <span className="text-white/90 ml-1">17282798</span></p>
                   <p>
                     <span className="text-white/50">Email:</span>{" "}
-                    <a
-                      href="mailto:support@silverlinegames.co.uk"
-                      className="text-purple-300 hover:text-purple-200 transition-colors ml-1"
-                    >
+                    <a href="mailto:support@silverlinegames.co.uk" className="text-purple-300 hover:text-purple-200 transition-colors ml-1">
                       support@silverlinegames.co.uk
                     </a>
                   </p>
