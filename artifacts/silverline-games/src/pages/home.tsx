@@ -606,9 +606,21 @@ export default function Home() {
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </a>
               )}
-              <span className="rounded-full bg-gray-100 px-4 py-2 text-sm font-semibold text-gray-600">
-                {currentFeaturedGame.live ? "Available on the App Store" : "Coming soon"}
-              </span>
+              {currentFeaturedGame.live && currentFeaturedGame.googlePlayUrl ? (
+                <a
+                  href={currentFeaturedGame.googlePlayUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center rounded-full bg-gray-100 px-6 py-3 text-sm font-semibold text-gray-700 transition-colors hover:bg-gray-200"
+                >
+                  Get it on Google Play
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </a>
+              ) : (
+                <span className="rounded-full bg-gray-100 px-4 py-2 text-sm font-semibold text-gray-600">
+                  Coming soon
+                </span>
+              )}
             </div>
 
             <div className="mt-8 flex flex-col items-center gap-5 sm:flex-row lg:justify-start">
@@ -875,7 +887,7 @@ export default function Home() {
                       href={game.appStoreUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center rounded-full bg-gray-950 px-3 py-1.5 text-xs font-semibold text-white transition-colors hover:bg-gray-800"
+                      className="inline-flex w-full items-center justify-center whitespace-nowrap rounded-full bg-gray-950 px-3 py-1.5 text-xs font-semibold text-white transition-colors hover:bg-gray-800"
                     >
                       <Smartphone className="mr-1.5 h-3.5 w-3.5" />
                       Download on the App Store
@@ -891,7 +903,7 @@ export default function Home() {
                       href={game.googlePlayUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center rounded-full bg-gray-950 px-3 py-1.5 text-xs font-semibold text-white transition-colors hover:bg-gray-800"
+                      className="inline-flex w-full items-center justify-center whitespace-nowrap rounded-full bg-gray-950 px-3 py-1.5 text-xs font-semibold text-white transition-colors hover:bg-gray-800"
                     >
                       <Smartphone className="mr-1.5 h-3.5 w-3.5" />
                       Get it on Google Play
