@@ -592,10 +592,10 @@ export default function Home() {
                   href={currentFeaturedGame.appStoreUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center rounded-full bg-[hsl(228,45%,8%)] px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-gray-300/60 transition-transform hover:-translate-y-0.5"
+                  className="inline-flex w-full items-center justify-center whitespace-nowrap rounded-full bg-[hsl(228,45%,8%)] px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-gray-300/60 transition-transform hover:-translate-y-0.5 sm:w-[290px]"
                 >
-                  Download on the App Store
-                  <ArrowRight className="ml-2 h-4 w-4" />
+                  <Smartphone className="mr-2 h-4 w-4 shrink-0" />
+                  Download on Apple App Store
                 </a>
               ) : (
                 <a
@@ -611,10 +611,10 @@ export default function Home() {
                   href={currentFeaturedGame.googlePlayUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center rounded-full bg-gray-100 px-6 py-3 text-sm font-semibold text-gray-700 transition-colors hover:bg-gray-200"
+                  className="inline-flex w-full items-center justify-center whitespace-nowrap rounded-full bg-[hsl(228,45%,8%)] px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-gray-300/60 transition-transform hover:-translate-y-0.5 sm:w-[290px]"
                 >
-                  Get it on Google Play
-                  <ArrowRight className="ml-2 h-4 w-4" />
+                  <Smartphone className="mr-2 h-4 w-4 shrink-0" />
+                  Download on Google Play Store
                 </a>
               ) : (
                 <span className="rounded-full bg-gray-100 px-4 py-2 text-sm font-semibold text-gray-600">
@@ -889,12 +889,12 @@ export default function Home() {
                       rel="noopener noreferrer"
                       className="inline-flex w-full items-center justify-center whitespace-nowrap rounded-full bg-gray-950 px-3 py-1.5 text-xs font-semibold text-white transition-colors hover:bg-gray-800"
                     >
-                      <Smartphone className="mr-1.5 h-3.5 w-3.5" />
-                      Download on the App Store
+                      <Smartphone className="mr-1.5 h-3.5 w-3.5 shrink-0" />
+                      Download on Apple App Store
                     </a>
                   ) : (
                     <div className="inline-flex items-center rounded-full bg-gray-100 px-3 py-1.5 text-xs font-semibold text-gray-600">
-                      <Smartphone className="mr-1.5 h-3.5 w-3.5" />
+                      <Smartphone className="mr-1.5 h-3.5 w-3.5 shrink-0" />
                       Coming soon
                     </div>
                   )}
@@ -905,8 +905,8 @@ export default function Home() {
                       rel="noopener noreferrer"
                       className="inline-flex w-full items-center justify-center whitespace-nowrap rounded-full bg-gray-950 px-3 py-1.5 text-xs font-semibold text-white transition-colors hover:bg-gray-800"
                     >
-                      <Smartphone className="mr-1.5 h-3.5 w-3.5" />
-                      Get it on Google Play
+                      <Smartphone className="mr-1.5 h-3.5 w-3.5 shrink-0" />
+                      Download on Google Play Store
                     </a>
                   )}
                 </div>
