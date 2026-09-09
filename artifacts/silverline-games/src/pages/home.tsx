@@ -887,14 +887,14 @@ export default function Home() {
                       href={game.appStoreUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex w-full items-center justify-center whitespace-nowrap rounded-full bg-gray-950 px-3 py-1.5 text-xs font-semibold text-white transition-colors hover:bg-gray-800"
+                      className="inline-flex h-8 w-full items-center justify-center whitespace-nowrap rounded-full bg-gray-950 px-2 text-[10px] font-semibold tracking-tight text-white transition-colors hover:bg-gray-800"
                     >
-                      <Smartphone className="mr-1.5 h-3.5 w-3.5 shrink-0" />
+                      <Smartphone className="mr-1 h-3 w-3 shrink-0" />
                       Download on Apple App Store
                     </a>
                   ) : (
                     <div className="inline-flex items-center rounded-full bg-gray-100 px-3 py-1.5 text-xs font-semibold text-gray-600">
-                      <Smartphone className="mr-1.5 h-3.5 w-3.5 shrink-0" />
+                      <Smartphone className="mr-1 h-3 w-3 shrink-0" />
                       Coming soon
                     </div>
                   )}
@@ -903,9 +903,9 @@ export default function Home() {
                       href={game.googlePlayUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex w-full items-center justify-center whitespace-nowrap rounded-full bg-gray-950 px-3 py-1.5 text-xs font-semibold text-white transition-colors hover:bg-gray-800"
+                      className="inline-flex h-8 w-full items-center justify-center whitespace-nowrap rounded-full bg-gray-950 px-2 text-[10px] font-semibold tracking-tight text-white transition-colors hover:bg-gray-800"
                     >
-                      <Smartphone className="mr-1.5 h-3.5 w-3.5 shrink-0" />
+                      <Smartphone className="mr-1 h-3 w-3 shrink-0" />
                       Download on Google Play Store
                     </a>
                   )}
