@@ -891,7 +891,7 @@ export default function Home() {
                       href={game.googlePlayUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center rounded-full bg-gray-100 px-3 py-1.5 text-xs font-semibold text-gray-700 transition-colors hover:bg-gray-200"
+                      className="inline-flex items-center rounded-full bg-gray-950 px-3 py-1.5 text-xs font-semibold text-white transition-colors hover:bg-gray-800"
                     >
                       <Smartphone className="mr-1.5 h-3.5 w-3.5" />
                       Get it on Google Play
