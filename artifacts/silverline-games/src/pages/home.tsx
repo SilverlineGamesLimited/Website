@@ -127,6 +127,7 @@ const games = [
     ],
     icon: "/gem-kingdom-icon.png",
     appStoreUrl: "https://apps.apple.com/gb/app/gem-kingdom/id6794047234",
+    googlePlayUrl: "https://play.google.com/store/apps/details?id=com.silverlinegameslimited.gemkingdom",
     live: true,
   },
   {
@@ -885,11 +886,16 @@ export default function Home() {
                       Coming soon
                     </div>
                   )}
-                  {game.live && (
-                    <div className="inline-flex items-center rounded-full bg-gray-100 px-3 py-1.5 text-xs font-semibold text-gray-600">
+                  {game.live && game.googlePlayUrl && (
+                    <a
+                      href={game.googlePlayUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center rounded-full bg-gray-100 px-3 py-1.5 text-xs font-semibold text-gray-700 transition-colors hover:bg-gray-200"
+                    >
                       <Smartphone className="mr-1.5 h-3.5 w-3.5" />
-                      Android — coming soon
-                    </div>
+                      Get it on Google Play
+                    </a>
                   )}
                 </div>
                 <details className="group mt-4 rounded-xl bg-gray-50 p-4">
