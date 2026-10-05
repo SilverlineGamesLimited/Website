@@ -131,15 +131,22 @@ const games = [
     live: true,
   },
   {
-    title: "Arcade Tap Game",
-    label: "Project Two",
-    tag: "Fast reaction fun",
-    accent: "from-orange-300 via-amber-300 to-pink-400",
-    surface: "from-orange-50 via-amber-50 to-pink-50",
-    highlight: "text-orange-700",
-    desc: "A quick-reaction arcade game with simple tap challenges and upbeat score-chasing energy.",
-    spotlight: "Fast, simple tap challenges made for score chasing and bursts of arcade energy.",
-    details: ["Quick tap challenges", "Score-chasing gameplay", "Easy to pick up between busy moments"],
+    title: "Gravity Block Rush",
+    label: "Gravity Block Rush",
+    tag: "Dodge, Collect, Survive",
+    accent: "from-fuchsia-400 via-purple-400 to-cyan-400",
+    surface: "from-fuchsia-50 via-purple-50 to-cyan-50",
+    highlight: "text-fuchsia-700",
+    desc: "A fast-paced arcade challenge — dodge falling blocks, collect coins, and survive as long as you can.",
+    spotlight: "Dodge incoming obstacles, collect coins, unlock custom styles, and climb the Game Center leaderboard.",
+    details: [
+      "Fast, responsive survival gameplay",
+      "Unlockable ball styles, trails, and power-ups",
+      "Daily rewards, missions, and Game Center leaderboards",
+    ],
+    icon: "/gravity-block-rush-icon.png",
+    appStoreUrl: "https://apps.apple.com/gb/app/gravity-block-rush/id6793921412",
+    live: true,
   },
   {
     title: "Seasonal Catch Game",
@@ -250,7 +257,7 @@ const faqs = [
   {
     question: "Where can I find the games?",
     answer:
-      "Gem Kingdom is available now — download it from the App Store. Our other games are still in development, with App Store links added as soon as they're ready.",
+      "Gem Kingdom and Gravity Block Rush are available now on the App Store. Our other games are still in development, with download links added as soon as they're ready.",
   },
   {
     question: "Who handles purchases and refunds?",
@@ -426,8 +433,9 @@ export default function Home() {
                 Building bright, friendly mobile games for players everywhere.
               </h1>
               <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/72 md:text-xl">
-                Gem Kingdom is out now on the App Store, with more quick-play games
-                on the way — clear support, cheerful design, and honest updates.
+                Gem Kingdom and Gravity Block Rush are out now on the App Store,
+                with more quick-play games on the way — clear support, cheerful
+                design, and honest updates.
               </p>
             </motion.div>
 
@@ -618,7 +626,7 @@ export default function Home() {
                 </a>
               ) : (
                 <span className="rounded-full bg-gray-100 px-4 py-2 text-sm font-semibold text-gray-600">
-                  Coming soon
+                  {currentFeaturedGame.live ? "Google Play — coming soon" : "Coming soon"}
                 </span>
               )}
             </div>
@@ -841,7 +849,8 @@ export default function Home() {
               Our Games
             </h2>
             <p className="text-gray-500 text-lg leading-relaxed max-w-2xl mx-auto">
-              Gem Kingdom is available now, with more mobile games in development at Silverline Games Limited.
+              Gem Kingdom and Gravity Block Rush are available now on the App Store,
+              with more mobile games in development at Silverline Games Limited.
             </p>
           </motion.div>
 

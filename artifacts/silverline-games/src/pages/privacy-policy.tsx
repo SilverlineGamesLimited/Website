@@ -6,7 +6,7 @@ import { ChevronLeft } from "lucide-react";
 
 const appNames = [
   "Gem Kingdom",
-  "Arcade Tap Game",
+  "Gravity Block Rush",
   "Seasonal Catch Game",
   "Garden Strategy Game",
   "Any other Silverline Games title that links to this policy",
@@ -90,7 +90,7 @@ export default function PrivacyPolicy() {
 
             <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">Privacy Policy</h1>
             <p className="text-white/40 text-sm font-mono tracking-wider mb-10 pb-8 border-b border-white/10">
-              LAST UPDATED: SEPTEMBER 2026
+              LAST UPDATED: OCTOBER 2026
             </p>
 
             <div className="space-y-10 text-white/70 leading-relaxed">
