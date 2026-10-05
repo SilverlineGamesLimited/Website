@@ -853,7 +853,7 @@ export default function Home() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          <div className="grid auto-rows-fr grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {games.map((game, i) => (
               <motion.article
                 key={game.title}
@@ -862,7 +862,7 @@ export default function Home() {
                 whileHover={{ y: -10 }}
                 viewport={{ once: true, margin: "-60px" }}
                 transition={{ duration: 0.5, delay: i * 0.08 }}
-                className={`group relative overflow-hidden rounded-2xl border border-gray-100 bg-gradient-to-br ${game.surface} p-5 shadow-sm transition-shadow hover:shadow-2xl hover:shadow-purple-100`}
+                className={`group relative flex h-full flex-col overflow-hidden rounded-2xl border border-gray-100 bg-gradient-to-br ${game.surface} p-5 shadow-sm transition-shadow hover:shadow-2xl hover:shadow-purple-100`}
                 data-testid={`card-game-${i}`}
               >
                 <div className={`absolute inset-x-0 top-0 h-28 bg-gradient-to-br ${game.accent} opacity-[0.18] blur-2xl transition-opacity duration-300 group-hover:opacity-[0.35]`} />
@@ -889,7 +889,7 @@ export default function Home() {
                   <h3 className="text-gray-950 font-semibold text-lg mb-2">{game.title}</h3>
                   <p className="text-gray-500 text-sm leading-relaxed">{game.desc}</p>
                 </div>
-                <div className="mt-4 flex h-[72px] flex-col items-stretch justify-start gap-2">
+                <div className="mt-auto flex h-[88px] flex-col items-stretch justify-start gap-2 pt-4">
                   {game.live ? (
                     <a
                       href={game.appStoreUrl}
