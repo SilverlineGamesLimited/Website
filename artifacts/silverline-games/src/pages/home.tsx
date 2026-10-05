@@ -433,9 +433,8 @@ export default function Home() {
                 Building bright, friendly mobile games for players everywhere.
               </h1>
               <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/72 md:text-xl">
-                Gem Kingdom and Gravity Block Rush are out now on the App Store,
-                with more quick-play games on the way — clear support, cheerful
-                design, and honest updates.
+                Gem Kingdom and Gravity Block Rush are out now, with more quick-play
+                games on the way — clear support, cheerful design, and honest updates.
               </p>
             </motion.div>
 
