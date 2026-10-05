@@ -890,7 +890,7 @@ export default function Home() {
                   <h3 className="text-gray-950 font-semibold text-lg mb-2">{game.title}</h3>
                   <p className="text-gray-500 text-sm leading-relaxed">{game.desc}</p>
                 </div>
-                <div className="mt-4 flex flex-wrap items-center gap-2">
+                <div className="mt-4 flex h-[72px] flex-col items-stretch justify-start gap-2">
                   {game.live ? (
                     <a
                       href={game.appStoreUrl}
@@ -902,7 +902,7 @@ export default function Home() {
                       Download on Apple App Store
                     </a>
                   ) : (
-                    <div className="inline-flex items-center rounded-full bg-gray-100 px-3 py-1.5 text-xs font-semibold text-gray-600">
+                    <div className="inline-flex h-8 w-full items-center justify-center rounded-full bg-gray-100 px-3 text-xs font-semibold text-gray-600">
                       <Smartphone className="mr-1 h-3 w-3 shrink-0" />
                       Coming soon
                     </div>
