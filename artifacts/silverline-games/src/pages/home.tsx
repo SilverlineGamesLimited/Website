@@ -106,7 +106,7 @@ const serviceHighlights = [
   {
     icon: Smartphone,
     title: "iOS & Android",
-    desc: "Our games are built for iPhone first, with Android versions in development, using platform services such as Game Center and StoreKit where appropriate.",
+    desc: "Gem Kingdom and Gravity Block Rush are available on iOS and Android, with platform services such as Game Center, Google Play Games, and in-app purchases where supported.",
   },
 ];
 
@@ -138,14 +138,15 @@ const games = [
     surface: "from-fuchsia-50 via-purple-50 to-cyan-50",
     highlight: "text-fuchsia-700",
     desc: "A fast-paced arcade challenge — dodge falling blocks, collect coins, and survive as long as you can.",
-    spotlight: "Dodge incoming obstacles, collect coins, unlock custom styles, and climb the Game Center leaderboard.",
+    spotlight: "Dodge incoming obstacles, collect coins, unlock custom styles, and climb the leaderboard.",
     details: [
       "Fast, responsive survival gameplay",
       "Unlockable ball styles, trails, and power-ups",
-      "Daily rewards, missions, and Game Center leaderboards",
+      "Daily rewards, missions, and leaderboards",
     ],
     icon: "/gravity-block-rush-icon.png",
     appStoreUrl: "https://apps.apple.com/gb/app/gravity-block-rush/id6793921412",
+    googlePlayUrl: "https://play.google.com/store/apps/details?id=com.silverlinegameslimited.gravityblockrush",
     live: true,
   },
   {
@@ -257,7 +258,7 @@ const faqs = [
   {
     question: "Where can I find the games?",
     answer:
-      "Gem Kingdom and Gravity Block Rush are available now on the App Store. Our other games are still in development, with download links added as soon as they're ready.",
+      "Gem Kingdom and Gravity Block Rush are available now on the App Store and Google Play. Our other games are still in development, with download links added as soon as they're ready.",
   },
   {
     question: "Who handles purchases and refunds?",
@@ -848,7 +849,7 @@ export default function Home() {
               Our Games
             </h2>
             <p className="text-gray-500 text-lg leading-relaxed max-w-2xl mx-auto">
-              Gem Kingdom and Gravity Block Rush are available now on the App Store,
+              Gem Kingdom and Gravity Block Rush are available now on the App Store and Google Play,
               with more mobile games in development at Silverline Games Limited.
             </p>
           </motion.div>
