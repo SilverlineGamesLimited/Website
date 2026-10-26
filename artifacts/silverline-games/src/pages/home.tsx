@@ -150,23 +150,23 @@ const games = [
     live: true,
   },
   {
-    title: "Gem Cube Arena",
-    label: "Gem Cube Arena",
-    tag: "Match, Freeze, Survive",
+    title: "Online Competitive Gem Game",
+    label: "Online Competitive Gem Game",
+    tag: "Online competition",
     accent: "from-cyan-300 via-violet-400 to-amber-400",
     surface: "from-cyan-50 via-violet-50 to-amber-50",
     highlight: "text-violet-700",
-    platform: "iPhone",
+    platform: "iOS & Android",
     availability: "Coming soon for iPhone",
-    desc: "A multiplayer match-3 challenge — match gems, freeze your rivals, and race to survive in quick battles for 2–8 players.",
-    spotlight: "Match gems to earn precious seconds, unleash powerful diamonds, and freeze your rivals. Join a public match or challenge friends in a private room for 2–8 players.",
+    androidAvailability: "Coming soon for Android",
+    desc: "An online competitive gem game is in development. More details will be shared at launch.",
+    spotlight: "A new online competitive gem game for iPhone and Android. Name and artwork will be revealed at launch.",
     details: [
-      "Live gem battles for 2–8 players, with public matchmaking and private rooms",
-      "Powerful diamonds, row clears, and freezes to challenge your rivals",
-      "Rounds lasting up to two minutes, with weekly and all-time UK scoreboards",
-      "Internet connection and at least two players required to start a match",
+      "Online competitive play",
+      "In development for iPhone and Android",
+      "More details coming at launch",
     ],
-    icon: "/gem-cube-arena-icon.png",
+    teaser: true,
     live: false,
   },
   {
@@ -212,7 +212,7 @@ function PhoneMockup({ game, className = "" }: { game: Game; className?: string 
               />
             ) : (
               <div className={`flex h-24 w-24 items-center justify-center rounded-[1.55rem] bg-gradient-to-br ${game.accent} text-2xl font-black text-white shadow-xl shadow-black/20`}>
-                {game.label.replace("Project ", "")}
+                {game.teaser ? <Gamepad2 className="h-12 w-12" aria-hidden="true" /> : game.label.replace("Project ", "")}
               </div>
             )}
             <p className={`mt-6 text-xs font-bold uppercase tracking-[0.16em] ${game.highlight}`}>
@@ -278,7 +278,7 @@ const faqs = [
   {
     question: "Where can I find the games?",
     answer:
-      "Gem Kingdom and Gravity Block Rush are available now on the App Store and Google Play. Gem Cube Arena is coming soon for iPhone. Download links for upcoming games will be added when they launch.",
+      "Gem Kingdom and Gravity Block Rush are available now on the App Store and Google Play. An online competitive gem game is coming soon for iPhone and Android. Download links for upcoming games will be added when they launch.",
   },
   {
     question: "Who handles purchases and refunds?",
@@ -454,7 +454,7 @@ export default function Home() {
                 Building bright, friendly mobile games for players everywhere.
               </h1>
               <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/72 md:text-xl">
-                Gem Kingdom and Gravity Block Rush are out now, with Gem Cube Arena
+                Gem Kingdom and Gravity Block Rush are out now, with more mobile games
                 on the way — quick games, colourful challenges, and a little friendly competition.
               </p>
             </motion.div>
@@ -544,7 +544,7 @@ export default function Home() {
                       className={`flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br ${game.accent} text-sm font-black text-white shadow-md shadow-black/20`}
                       aria-label={game.label}
                     >
-                      {game.label.replace("Project ", "")}
+                      {game.teaser ? <Gamepad2 className="h-6 w-6" aria-hidden="true" /> : game.label.replace("Project ", "")}
                     </div>
                   )
                 )}
@@ -645,9 +645,16 @@ export default function Home() {
                   Download on Google Play Store
                 </a>
               ) : (
-                <span className="rounded-full bg-gray-100 px-4 py-2 text-sm font-semibold text-gray-600">
-                  {currentFeaturedGame.live ? "Google Play — coming soon" : (currentFeaturedGame.availability ?? "Coming soon")}
-                </span>
+                <div className="flex flex-col gap-2">
+                  <span className="rounded-full bg-gray-100 px-4 py-2 text-sm font-semibold text-gray-600">
+                    {currentFeaturedGame.live ? "Google Play — coming soon" : (currentFeaturedGame.availability ?? "Coming soon")}
+                  </span>
+                  {!currentFeaturedGame.live && currentFeaturedGame.androidAvailability && (
+                    <span className="rounded-full bg-gray-100 px-4 py-2 text-sm font-semibold text-gray-600">
+                      {currentFeaturedGame.androidAvailability}
+                    </span>
+                  )}
+                </div>
               )}
             </div>
 
@@ -870,7 +877,7 @@ export default function Home() {
             </h2>
             <p className="text-gray-500 text-lg leading-relaxed max-w-2xl mx-auto">
               Gem Kingdom and Gravity Block Rush are available now on the App Store and Google Play.
-              Gem Cube Arena is coming soon for iPhone, with live gem battles for 2–8 players.
+              An online competitive gem game is coming soon for iPhone and Android.
             </p>
           </motion.div>
 
@@ -897,7 +904,7 @@ export default function Home() {
                       />
                     ) : (
                       <div className={`flex w-full aspect-square items-center justify-center rounded-[1.5rem] bg-gradient-to-br ${game.accent} text-5xl font-black text-white shadow-lg shadow-gray-200 transition-transform duration-300 group-hover:scale-[1.04]`}>
-                        {game.label.replace("Project ", "")}
+                        {game.teaser ? <Gamepad2 className="h-20 w-20" aria-hidden="true" /> : game.label.replace("Project ", "")}
                       </div>
                     )}
                     <div className="absolute right-4 top-4 rounded-full bg-white/90 px-2.5 py-1 text-[0.68rem] font-bold uppercase tracking-[0.12em] text-gray-700 shadow-sm">
@@ -937,6 +944,12 @@ export default function Home() {
                       <Smartphone className="mr-1 h-3 w-3 shrink-0" />
                       Download on Google Play Store
                     </a>
+                  )}
+                  {!game.live && game.androidAvailability && (
+                    <div className="inline-flex h-8 w-full items-center justify-center rounded-full bg-gray-100 px-3 text-xs font-semibold text-gray-600">
+                      <Smartphone className="mr-1 h-3 w-3 shrink-0" />
+                      {game.androidAvailability}
+                    </div>
                   )}
                 </div>
                 <details className="group mt-4 rounded-xl bg-gray-50 p-4">
