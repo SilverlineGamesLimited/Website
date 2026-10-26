@@ -150,6 +150,26 @@ const games = [
     live: true,
   },
   {
+    title: "Gem Cube Arena",
+    label: "Gem Cube Arena",
+    tag: "Match, Freeze, Survive",
+    accent: "from-cyan-300 via-violet-400 to-amber-400",
+    surface: "from-cyan-50 via-violet-50 to-amber-50",
+    highlight: "text-violet-700",
+    platform: "iPhone",
+    availability: "Coming soon for iPhone",
+    desc: "A multiplayer match-3 challenge — match gems, freeze your rivals, and race to survive in quick battles for 2–8 players.",
+    spotlight: "Match gems to earn precious seconds, unleash powerful diamonds, and freeze your rivals. Join a public match or challenge friends in a private room for 2–8 players.",
+    details: [
+      "Live gem battles for 2–8 players, with public matchmaking and private rooms",
+      "Powerful diamonds, row clears, and freezes to challenge your rivals",
+      "Rounds lasting up to two minutes, with weekly and all-time UK scoreboards",
+      "Internet connection and at least two players required to start a match",
+    ],
+    icon: "/gem-cube-arena-icon.png",
+    live: false,
+  },
+  {
     title: "Seasonal Catch Game",
     label: "Project Three",
     tag: "Calm arcade play",
@@ -215,7 +235,7 @@ function PhoneMockup({ game, className = "" }: { game: Game; className?: string 
 const featuredGame = games[0];
 
 const heroStats = [
-  { label: "4", detail: "Games in our lineup" },
+  { label: String(games.length), detail: "Games in our lineup" },
   { label: "Mobile", detail: "Built for iOS & Android" },
   { label: "UK", detail: "Registered publisher" },
 ];
@@ -258,7 +278,7 @@ const faqs = [
   {
     question: "Where can I find the games?",
     answer:
-      "Gem Kingdom and Gravity Block Rush are available now on the App Store and Google Play. Our other games are still in development, with download links added as soon as they're ready.",
+      "Gem Kingdom and Gravity Block Rush are available now on the App Store and Google Play. Gem Cube Arena is coming soon for iPhone. Download links for upcoming games will be added when they launch.",
   },
   {
     question: "Who handles purchases and refunds?",
@@ -434,8 +454,8 @@ export default function Home() {
                 Building bright, friendly mobile games for players everywhere.
               </h1>
               <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/72 md:text-xl">
-                Gem Kingdom and Gravity Block Rush are out now, with more quick-play
-                games on the way — clear support, cheerful design, and honest updates.
+                Gem Kingdom and Gravity Block Rush are out now, with Gem Cube Arena
+                on the way — quick games, colourful challenges, and a little friendly competition.
               </p>
             </motion.div>
 
@@ -626,7 +646,7 @@ export default function Home() {
                 </a>
               ) : (
                 <span className="rounded-full bg-gray-100 px-4 py-2 text-sm font-semibold text-gray-600">
-                  {currentFeaturedGame.live ? "Google Play — coming soon" : "Coming soon"}
+                  {currentFeaturedGame.live ? "Google Play — coming soon" : (currentFeaturedGame.availability ?? "Coming soon")}
                 </span>
               )}
             </div>
@@ -849,12 +869,12 @@ export default function Home() {
               Our Games
             </h2>
             <p className="text-gray-500 text-lg leading-relaxed max-w-2xl mx-auto">
-              Gem Kingdom and Gravity Block Rush are available now on the App Store and Google Play,
-              with more mobile games in development at Silverline Games Limited.
+              Gem Kingdom and Gravity Block Rush are available now on the App Store and Google Play.
+              Gem Cube Arena is coming soon for iPhone, with live gem battles for 2–8 players.
             </p>
           </motion.div>
 
-          <div className="grid auto-rows-fr grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid auto-rows-fr grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {games.map((game, i) => (
               <motion.article
                 key={game.title}
@@ -881,7 +901,7 @@ export default function Home() {
                       </div>
                     )}
                     <div className="absolute right-4 top-4 rounded-full bg-white/90 px-2.5 py-1 text-[0.68rem] font-bold uppercase tracking-[0.12em] text-gray-700 shadow-sm">
-                      Mobile
+                      {game.platform ?? "Mobile"}
                     </div>
                   </div>
                   <p className={`${game.highlight} text-xs font-semibold uppercase tracking-[0.14em] mb-2`}>
@@ -904,7 +924,7 @@ export default function Home() {
                   ) : (
                     <div className="inline-flex h-8 w-full items-center justify-center rounded-full bg-gray-100 px-3 text-xs font-semibold text-gray-600">
                       <Smartphone className="mr-1 h-3 w-3 shrink-0" />
-                      Coming soon
+                      {game.availability ?? "Coming soon"}
                     </div>
                   )}
                   {game.live && game.googlePlayUrl && (
