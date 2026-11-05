@@ -7,6 +7,7 @@ import { ChevronLeft } from "lucide-react";
 const appNames = [
   "Gem Kingdom",
   "Gravity Block Rush",
+  "Gem Arena",
   "Seasonal Catch Game",
   "Garden Strategy Game",
   "Any other Silverline Games title that links to this policy",
@@ -50,6 +51,12 @@ const thirdPartyServices = [
     href: "https://www.apple.com/legal/privacy/",
   },
   {
+    service: "Cloudflare",
+    purpose: "Website and game-server connectivity, network security and abuse prevention",
+    policy: "cloudflare.com/privacypolicy",
+    href: "https://www.cloudflare.com/privacypolicy/",
+  },
+  {
     service: "Apple and Google platform services",
     purpose: "Device notifications, local storage and backups",
     policy: "Apple or Google privacy policy",
@@ -90,7 +97,7 @@ export default function PrivacyPolicy() {
 
             <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">Privacy Policy</h1>
             <p className="text-white/40 text-sm font-mono tracking-wider mb-10 pb-8 border-b border-white/10">
-              LAST UPDATED: OCTOBER 2026
+              LAST UPDATED: 5 NOVEMBER 2026
             </p>
 
             <div className="space-y-10 text-white/70 leading-relaxed">
@@ -131,8 +138,9 @@ export default function PrivacyPolicy() {
                 <div className="bg-purple-500/10 border border-purple-300/20 rounded-xl p-6 mb-5">
                   <p className="text-white/90 font-semibold mb-2">Request deletion from Silverline Games</p>
                   <p className="mb-3">
-                    Our games do not currently require a Silverline Games account, and we do
-                    not maintain our own server-side personal gameplay profiles.
+                    Gem Arena creates a player profile on our server when you first choose
+                    to play. It does not require an email address or password. Other games
+                    may store progress locally or use the platform services described below.
                   </p>
                   <ol className="space-y-2 pl-5 list-decimal">
                     <li>Email <a href="mailto:support@silverlinegames.co.uk" className="text-purple-300 hover:text-purple-200 transition-colors">support@silverlinegames.co.uk</a>.</li>
@@ -141,6 +149,22 @@ export default function PrivacyPolicy() {
                     <li>Describe the information you want us to delete.</li>
                   </ol>
                 </div>
+                <h3 className="text-white/90 font-semibold mb-2">Delete a Gem Arena player profile</h3>
+                <p className="mb-4">
+                  If your installed version offers <strong>Settings → Delete player profile</strong>,
+                  use that option and confirm. An internet connection is required. Wait for
+                  the app to confirm deletion; if the request is interrupted, retry it. If
+                  this option is unavailable or you cannot access the app, contact support
+                  using the steps above and include your player name and profile tag, if known.
+                </p>
+                <p className="mb-4">
+                  Confirmed profile deletion removes your profile, sign-in sessions, stored
+                  scores and personal match history from the active game service, and clears
+                  the saved profile on that device. Identifying player labels are removed
+                  from shared match results; the other players&apos; results can remain.
+                  Deleting the app alone does not request deletion of your server profile.
+                  Playing again after deletion creates a new profile with new progress.
+                </p>
                 <p className="mb-4">
                   Do not send passwords, payment-card details or unnecessary identity
                   documents. We may request limited additional information if reasonably
@@ -194,9 +218,9 @@ export default function PrivacyPolicy() {
                   <li>Locally recorded purchase-entitlement information</li>
                 </ul>
                 <p className="mb-5">
-                  We do not currently transmit this local gameplay information to our own
-                  servers. It may be included in an Apple or Google device backup when backups
-                  are enabled.
+                  Local-only game information may be included in an Apple or Google device
+                  backup when backups are enabled. Gem Arena also sends gameplay information
+                  to our server, as described in section 3.7.
                 </p>
 
                 <h3 className="text-white/90 font-semibold mb-2">3.2 Advertising data — Google AdMob</h3>
@@ -286,6 +310,33 @@ export default function PrivacyPolicy() {
                   and related app-interaction information for analytics, troubleshooting,
                   fraud prevention, reliability and performance measurement. We do not
                   intentionally use this information to identify you by name.
+                </p>
+              </section>
+
+              <section>
+                <h3 className="text-white/90 font-semibold mb-2">3.7 Gem Arena online player profiles</h3>
+                <p className="mb-3">
+                  Gem Arena requires an internet connection for multiplayer and AI practice.
+                  We store a generated player identifier and profile tag, your chosen display
+                  name, authentication-session records, scores, game counts, recent play times
+                  and match history. Matches also process your chosen avatar, moves, results
+                  and room or Cup participation. The app stores its sign-in credential in
+                  the device&apos;s protected Keychain; no email or password is needed to play.
+                </p>
+                <p className="mb-4">
+                  We use this information to run matches, reconnect players, provide
+                  leaderboards and personal history, prevent duplicate results, and operate
+                  and protect the service. Our private administration tools show game activity
+                  and results for support, troubleshooting and abuse prevention. Network
+                  providers, including Cloudflare, process connection information such as IP
+                  addresses to route and protect requests.
+                </p>
+                <p>
+                  Your display name, profile tag, avatar and game results may be visible to
+                  other players in matches, leaderboards and shared match history. Choose a
+                  display name that does not reveal information you want to keep private.
+                  Our own player identifiers and authentication credentials are not passed
+                  to AdMob for advertising.
                 </p>
               </section>
 
@@ -397,10 +448,11 @@ export default function PrivacyPolicy() {
                   ))}
                 </ul>
                 <p className="mb-4">
-                  Because most gameplay information is stored locally and we do not currently
-                  operate personal gameplay-profile servers, we may hold little or no information
-                  capable of identifying an individual player. Information controlled by Apple
-                  or Google must normally be accessed or deleted through the relevant provider.
+                  Gem Arena&apos;s generated player identifiers and associated gameplay records
+                  can be personal data even without an email address or password. Contact us
+                  about information held by Silverline Games. Information controlled solely
+                  by Apple, Google or another provider must normally be accessed or deleted
+                  through that provider.
                 </p>
                 <p className="mb-4">
                   To exercise your rights, email{" "}
@@ -438,8 +490,16 @@ export default function PrivacyPolicy() {
                 <p className="mb-4">
                   Advertising, account, purchase and diagnostic information processed by Apple,
                   Google or their partners is retained according to their respective policies and
-                  legal obligations. We do not currently retain personal gameplay profiles on our
-                  own servers.
+                  legal obligations.
+                </p>
+                <p className="mb-4">
+                  Gem Arena keeps your server profile and scores to provide your ongoing game
+                  progress. Personal match history is limited to the latest 50 rounds. After
+                  confirmed profile deletion, these personal records are removed from the
+                  active service. Shared results may remain with identifying player labels
+                  removed. A restricted deletion receipt containing hashed identifiers is
+                  retained to recognise interrupted retries and help prevent deleted profiles
+                  being reactivated. Hashed identifiers are not treated as anonymous data.
                 </p>
                 <p>
                   Support correspondence is retained only as long as reasonably necessary to
