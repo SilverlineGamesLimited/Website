@@ -350,14 +350,18 @@ export default function PrivacyPolicy() {
                   ads may still be displayed. You can change your choice in iPhone or iPad
                   Settings &rarr; Privacy &amp; Security &rarr; Tracking.
                 </p>
-                <h3 className="text-white/90 font-semibold mb-2">4.2 Android advertising consent</h3>
+                <h3 className="text-white/90 font-semibold mb-2">4.2 Google advertising consent and privacy choices</h3>
                 <p>
-                  On Android, some games use Google&apos;s User Messaging Platform to collect
-                  and record advertising consent choices where required. Depending on your
+                  Gem Arena on iPhone and some of our Android games use Google&apos;s User
+                  Messaging Platform to collect and record advertising consent and privacy
+                  choices where required. These choices are separate from Apple&apos;s tracking
+                  permission. Depending on your
                   location, you may be offered personalised ads, non-personalised ads or
-                  controls for advertising partners. Where an in-app privacy-options control
-                  is available, you can use it to review your choices. You can also manage or
-                  reset your Android advertising identifier through your device settings.
+                  controls for advertising partners. In Gem Arena, a privacy-options control
+                  appears in Settings when Google makes it available for your location, so
+                  you can review your choices. Refusing Apple&apos;s tracking permission does
+                  not prevent you from playing. On Android, you can also manage or reset your
+                  advertising identifier through your device settings.
                 </p>
               </section>
 
