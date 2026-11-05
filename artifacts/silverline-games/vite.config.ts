@@ -55,6 +55,8 @@ export default defineConfig({
   },
   root: path.resolve(import.meta.dirname),
   build: {
+    // Cloudflare's build runner has a lower file-descriptor limit than macOS.
+    rollupOptions: { maxParallelFileOps: 32 },
     outDir: path.resolve(import.meta.dirname, "dist/public"),
     emptyOutDir: true,
   },
