@@ -150,25 +150,29 @@ const games = [
     live: true,
   },
   {
-    title: "Online Competitive Gem Game",
-    label: "Online Competitive Gem Game",
-    tag: "Online competition",
+    title: "Gem Arena",
+    label: "Gem Arena",
+    tag: "Match. Compete. Freeze.",
     accent: "from-cyan-300 via-violet-400 to-amber-400",
     surface: "from-cyan-50 via-violet-50 to-amber-50",
     highlight: "text-violet-700",
-    platform: "iOS & Android",
-    availability: "Coming soon for iPhone",
-    androidAvailability: "Coming soon for Android",
-    desc: "Live gem battles with optional AI practice while you wait. Choose your opponents and keep matching — AI practice is now in the iPhone beta.",
-    spotlight: "Challenge other players in live gem battles, or practise with AI while you wait. The version 15 iPhone beta adds unranked AI matches for 2, 4 or 8 total players, including you. Name and artwork will be revealed at launch.",
+    platform: "iPhone",
+    availability: "Available now for iPhone",
+    androidAvailability: "Android in development",
+    desc: "Match gems, earn time and freeze rivals in live match-3 battles. Challenge friends or practise with AI. Internet required.",
+    spotlight: "Every second counts. Match gems on your own board, earn extra time and freeze your rivals in rounds lasting up to two minutes. Challenge friends with a private room code, practise with AI or enter the eight-player Cup. Available now for iPhone; internet required.",
     details: [
-      "Version 15 iPhone beta: choose 2, 4 or 8 total players — you plus 1, 3 or 7 AI opponents",
-      "Optional AI practice when you are alone in a public waiting lobby or your own private lobby",
-      "AI practice scores do not count towards multiplayer rankings; internet access is required",
-      "Public release coming soon for iPhone and Android",
+      "Live multiplayer for 2–8 players, with public matchmaking and private room codes",
+      "Optional AI practice with 2, 4 or 8 total players, including you",
+      "Exploding Gems, white diamonds and five-second freezes",
+      "An eight-player Cup with AI filling empty places; Cup and AI practice results are unranked",
+      "Weekly and all-time multiplayer leaderboards, personal match history and spectating",
+      "Internet required, including for AI practice. Public matchmaking depends on other players being available. Contains advertising.",
     ],
-    teaser: true,
-    live: false,
+    icon: "/gem-arena-icon.jpg",
+    appStoreUrl: "https://apps.apple.com/gb/app/gem-arena/id6826182807",
+    teaser: false,
+    live: true,
   },
   {
     title: "Seasonal Catch Game",
@@ -233,7 +237,7 @@ function PhoneMockup({ game, className = "" }: { game: Game; className?: string 
   );
 }
 
-const featuredGame = games[0];
+const featuredGame = games[2];
 
 const heroStats = [
   { label: String(games.length), detail: "Games in our lineup" },
@@ -279,7 +283,7 @@ const faqs = [
   {
     question: "Where can I find the games?",
     answer:
-      "Gem Kingdom and Gravity Block Rush are available now on the App Store and Google Play. An online competitive gem game is coming soon for iPhone and Android. Download links for upcoming games will be added when they launch.",
+      "Gem Arena is available now for iPhone on the App Store. Gem Kingdom and Gravity Block Rush are available on the App Store and Google Play. Gem Arena for Android is still in development; its download link will be added when it launches.",
   },
   {
     question: "Who handles purchases and refunds?",
@@ -307,7 +311,7 @@ const trustItems = [
 ];
 
 export default function Home() {
-  const [featuredIndex, setFeaturedIndex] = useState(0);
+  const [featuredIndex, setFeaturedIndex] = useState(2);
   const currentFeaturedGame = games[featuredIndex];
 
   useEffect(() => {
@@ -455,8 +459,8 @@ export default function Home() {
                 Building bright, friendly mobile games for players everywhere.
               </h1>
               <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/72 md:text-xl">
-                Gem Kingdom and Gravity Block Rush are out now, with more mobile games
-                on the way — quick games, colourful challenges, and a little friendly competition.
+                Gem Arena is out now for iPhone. Match gems, freeze rivals and challenge friends
+                — alongside Gem Kingdom and Gravity Block Rush.
               </p>
             </motion.div>
 
@@ -648,7 +652,7 @@ export default function Home() {
               ) : (
                 <div className="flex flex-col gap-2">
                   <span className="rounded-full bg-gray-100 px-4 py-2 text-sm font-semibold text-gray-600">
-                    {currentFeaturedGame.live ? "Google Play — coming soon" : (currentFeaturedGame.availability ?? "Coming soon")}
+                    {currentFeaturedGame.live ? (currentFeaturedGame.androidAvailability ?? "Available on iPhone") : (currentFeaturedGame.availability ?? "Coming soon")}
                   </span>
                   {!currentFeaturedGame.live && currentFeaturedGame.androidAvailability && (
                     <span className="rounded-full bg-gray-100 px-4 py-2 text-sm font-semibold text-gray-600">
@@ -877,8 +881,8 @@ export default function Home() {
               Our Games
             </h2>
             <p className="text-gray-500 text-lg leading-relaxed max-w-2xl mx-auto">
-              Gem Kingdom and Gravity Block Rush are available now on the App Store and Google Play.
-              An online competitive gem game is coming soon for iPhone and Android.
+              Gem Arena is available now for iPhone. Gem Kingdom and Gravity Block Rush
+              are available on the App Store and Google Play, with more games in development.
             </p>
           </motion.div>
 
@@ -946,7 +950,7 @@ export default function Home() {
                       Download on Google Play Store
                     </a>
                   )}
-                  {!game.live && game.androidAvailability && (
+                  {!game.googlePlayUrl && game.androidAvailability && (
                     <div className="inline-flex h-8 w-full items-center justify-center rounded-full bg-gray-100 px-3 text-xs font-semibold text-gray-600">
                       <Smartphone className="mr-1 h-3 w-3 shrink-0" />
                       {game.androidAvailability}
